@@ -1,0 +1,27 @@
+{
+  "name": "coperex_2022152",
+  "version": "1.0.0",
+  "description": "La empresa COPEREX está buscando desarrollar una solución eficiente y moderna para gestionar la incorporación de nuevos socios y empresas a su famosa feria “Interfer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ESModule"
+  ],
+  "author": "Jose Jimenez",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "mongoose": "^8.1.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "type": "module"
+}
