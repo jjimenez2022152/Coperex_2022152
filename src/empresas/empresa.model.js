@@ -13,16 +13,29 @@ const EmpresaSchema = mongoose.Schema({
         type: int,
         required: [true, "Los años son obligatorios"],
     },
+    telefono: {
+        type: int,
+        required: [true, "El numero de telefono es obligatorio"],
+    },
     categoria: {
         type: String,
         required: [true, "La categoria es obligatoria"],
     },
+    correo: {
+        type: String,
+        required: [true, "El correo es obligarorio"],
+        unique: true,
+    },
+    estado: {
+        type: Boolean,
+        default: true,
+    },
 });
 
-/*EmpresaSchema.methods.toJSON = function () {
-    const { __v, password, _id, ...usuario } = this.toObject();
-    usuario.uid = _id;
-    return usuario;
-}*/
+EmpresaSchema.methods.toJSON = function () {
+    const { __v, _id, ...empresa } = this.toObject(); // Se eliminó 'password' ya que no parece ser parte del modelo Empresa
+    empresa.uid = _id;
+    return empresa;
+};
 
 export default mongoose.model('Empresa', EmpresaSchema);

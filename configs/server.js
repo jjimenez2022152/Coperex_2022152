@@ -6,6 +6,7 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 import { dbConnection } from './mongo.js';
 import userRoutes from '../src/users/user.routes.js';
+import empresaRoutes from '../src/empresas/empresa.routes.js'
 //import authRoutes from '../src/auth/auth.routes.js'
 
 class Server{
@@ -14,6 +15,7 @@ class Server{
         this.port = process.env.PORT;
         this.usuarioPath = '/coperex_Api/v1/users'
         //this.authPath = '/coffeApi/v1/auth'
+        this.empresaPath = '/coperex_Api/v1/empresas'
 
         this.middlewares();
         this.conectarDB();
@@ -35,6 +37,7 @@ class Server{
     routes(){
         this.app.use(this.usuarioPath, userRoutes);
         //this.app.use(this.authPath, authRoutes)
+        this.app.use(this.empresaPath, empresaRoutes);
     }
 
     listen(){
