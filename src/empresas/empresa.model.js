@@ -10,11 +10,11 @@ const EmpresaSchema = mongoose.Schema({
         required: [true, "El impacto es obligarorio"],
     },
     años: {
-        type: int,
+        type: String,
         required: [true, "Los años son obligatorios"],
     },
     telefono: {
-        type: int,
+        type: String,
         required: [true, "El numero de telefono es obligatorio"],
     },
     categoria: {
@@ -33,7 +33,7 @@ const EmpresaSchema = mongoose.Schema({
 });
 
 EmpresaSchema.methods.toJSON = function () {
-    const { __v, _id, ...empresa } = this.toObject(); // Se eliminó 'password' ya que no parece ser parte del modelo Empresa
+    const { __v, _id, ...empresa } = this.toObject(); 
     empresa.uid = _id;
     return empresa;
 };
