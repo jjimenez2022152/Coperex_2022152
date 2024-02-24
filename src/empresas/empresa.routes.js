@@ -1,19 +1,22 @@
-import { Router } from "express"; 
+import { Router } from "express";
 import { check } from "express-validator";
 import {
-    empresaPost
+    empresaPost,
+    empresasGetAZ
 } from "./empresa.controller.js";
-
 import {
-    existenteEmail
+    existenteEmail,
+    esRoleValido,
+    //existeUsuarioById,
 } from "../helpers/db-validators.js";
-
 import { validarCampos } from "../middlewares/validar-campos.js";
+//import { tieneRole } from "../middlewares/validar-roles.js";
+import { validarJWT } from "../middlewares/validar-jwt.js";
 
 const router = Router();
 
-Router.post(
-    "/,"
+router.post(
+    "/",
     [
         check("nombre", "El nombre es obligatorio").not().isEmpty(),
         check("impacto","El impacto de la empresa es obligatorio").not().isEmpty(),
@@ -24,9 +27,13 @@ Router.post(
         check("categoria", "La categoria es obligatoria").not().isEmpty(),
         check("correo", "Este no es un correo valido").isEmail(),
         check("correo").custom(existenteEmail),
-        validarCampos
+        validarCampos,
     ],
     empresaPost
 );
+
+router.get("/", empresasGetAZ);
+
+
 
 export default router;

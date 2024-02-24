@@ -13,3 +13,28 @@ export const empresaPost = async (req = request, res = response) => {
         empresa
     });
 }
+
+export const empresasGetAZ = async (req, res) => {
+    const { limite = 10, desde = 0 } = req.query;
+    const query = { estado: true };
+
+    try {
+        const [total, empresas] = await Promise.all([
+            Empresa.countDocuments(query),
+            Empresa.find(query)
+                .sort({ nombre: 1 }) // Ordenar por nombre en orden ascendente (A-Z)
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ]);
+
+        res.status(200).json({
+            total,
+            empresas
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            msg: 'Error al listar empresas'
+        });
+    }
+};
