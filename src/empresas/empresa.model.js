@@ -10,7 +10,7 @@ const EmpresaSchema = mongoose.Schema({
         required: [true, "El impacto es obligarorio"],
     },
     años: {
-        type: String,
+        type: Number,
         required: [true, "Los años son obligatorios"],
     },
     telefono: {

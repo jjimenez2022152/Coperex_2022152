@@ -2,8 +2,9 @@ import { Router } from "express";
 import { check } from "express-validator";
 import {
     empresaPost,
-    empresasGetAZ,
-    empresasGetZA
+    companyGet,
+    empresaGetZA,
+    empresasGetAZ
 } from "./empresa.controller.js";
 import {
     existenteEmail,
@@ -31,9 +32,11 @@ router.post(
     empresaPost
 );
 
-router.get("/", empresasGetAZ);
-router.get("/", empresasGetZA);
+router.get("/", companyGet);
 
+
+router.get("/empresasAZ", empresaGetZA);
+router.get("/empresasZA", empresasGetAZ);
 
 
 export default router;

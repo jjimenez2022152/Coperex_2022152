@@ -1,0 +1,56 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "empresaCollection",
+    "dateExported": "2024-02-24T04:55:01.420Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "24114c4c-dda0-408a-94fc-4b3b9510a26b",
+            "colId": "a0764fc9-727f-41e3-8c4c-e576882b4f4a",
+            "containerId": "",
+            "name": "empresaPost",
+            "url": "http://localhost:3000/coperex_Api/v1/empresas",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-23T02:01:15.038Z",
+            "modified": "2024-02-24T04:11:01.505Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nombre\": \"Netflix\",\n\"impacto\": \"Global\",\n\"años\": \"25\",\n\"telefono\": \"33445566\",\n\"categoria\": \"Entretenimiento\",\n\"correo\": \"netflix@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "cd7ee55e-3aa7-4571-bda0-2e6d80ac9112",
+            "colId": "a0764fc9-727f-41e3-8c4c-e576882b4f4a",
+            "containerId": "",
+            "name": "empresasAZGet",
+            "url": "http://localhost:3000/coperex_Api/v1/empresas",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-24T04:20:25.024Z",
+            "modified": "2024-02-24T04:50:42.309Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8736425f-616f-47e6-a5af-2a9b7f0a4ad2",
+            "colId": "a0764fc9-727f-41e3-8c4c-e576882b4f4a",
+            "containerId": "",
+            "name": "empresasZAGet",
+            "url": "http://localhost:3000/coperex_Api/v1/empresas/descendente",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-24T04:43:10.082Z",
+            "modified": "2024-02-24T04:45:52.187Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

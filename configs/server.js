@@ -38,9 +38,6 @@ class Server{
         this.app.use(this.usuarioPath, userRoutes);
         //this.app.use(this.authPath, authRoutes)
         this.app.use(this.empresaPath, empresaRoutes);
-
-        this.app.use(this.empresaPath + '/descendente', empresaRoutes); // Ruta para orden descendente
-
     }
 
     listen(){
