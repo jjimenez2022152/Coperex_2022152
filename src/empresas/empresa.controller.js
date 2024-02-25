@@ -32,7 +32,7 @@ export const companyGet = async (req = request, res = response) => {
 }
 
 export const empresasGetAZ = async (req, res) => {
-    const { limite = 10, desde = 0 } = req.query;
+    const { limite, desde = 0 } = req.query;
     const query = { estado: true };
 
     try {
@@ -102,6 +102,56 @@ export const empresaGetByYear = async (req = request, res = response) => {
         console.log(error);
         res.status(500).json({
             msg: 'Error to list Companies'
+        });
+    }
+};
+
+export const empresasGetAMen = async (req, res) => {
+    const { limite = 10, desde = 0 } = req.query;
+    const query = { estado: true };
+
+    try {
+        const [total, empresas] = await Promise.all([
+            Empresa.countDocuments(query),
+            Empresa.find(query)
+                .sort({ años: 1 }) // Ordenar por nombre en orden ascendente (A-Z)
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ]);
+
+        res.status(200).json({
+            total,
+            empresas
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            msg: 'Error al listar empresas'
+        });
+    }
+};
+
+export const empresasGetAMas = async (req, res) => {
+    const { limite = 10, desde = 0 } = req.query;
+    const query = { estado: true };
+
+    try {
+        const [total, empresas] = await Promise.all([
+            Empresa.countDocuments(query),
+            Empresa.find(query)
+                .sort({ años: -1 }) // Ordenar por nombre en orden ascendente (A-Z)
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ]);
+
+        res.status(200).json({
+            total,
+            empresas
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            msg: 'Error al listar empresas'
         });
     }
 };

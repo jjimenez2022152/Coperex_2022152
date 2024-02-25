@@ -4,7 +4,9 @@ import {
     empresaPost,
     companyGet,
     empresaGetZA,
-    empresasGetAZ
+    empresasGetAZ,
+    empresasGetAMen,
+    empresasGetAMas
 } from "./empresa.controller.js";
 import {
     existenteEmail,
@@ -37,6 +39,9 @@ router.get("/", companyGet);
 
 router.get("/empresasAZ", empresaGetZA);
 router.get("/empresasZA", empresasGetAZ);
+router.get("/empresasMem", empresasGetAMen);
+router.get("/empresasMas", empresasGetAMas);
+
 
 
 export default router;

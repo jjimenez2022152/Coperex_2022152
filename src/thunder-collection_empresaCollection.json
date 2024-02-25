@@ -1,53 +1,107 @@
 {
     "client": "Thunder Client",
     "collectionName": "empresaCollection",
-    "dateExported": "2024-02-24T04:55:01.420Z",
+    "dateExported": "2024-02-25T06:20:01.246Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "24114c4c-dda0-408a-94fc-4b3b9510a26b",
-            "colId": "a0764fc9-727f-41e3-8c4c-e576882b4f4a",
+            "_id": "3b9ff89e-da91-4964-8f6e-8041e2e31208",
+            "colId": "d4d3ca85-42ad-4b1d-ad8d-8f2f94255f09",
             "containerId": "",
             "name": "empresaPost",
             "url": "http://localhost:3000/coperex_Api/v1/empresas",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-23T02:01:15.038Z",
-            "modified": "2024-02-24T04:11:01.505Z",
+            "created": "2024-02-25T04:56:16.363Z",
+            "modified": "2024-02-25T05:37:45.892Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n\"nombre\": \"Netflix\",\n\"impacto\": \"Global\",\n\"años\": \"25\",\n\"telefono\": \"33445566\",\n\"categoria\": \"Entretenimiento\",\n\"correo\": \"netflix@gmail.com\"\n}",
+                "raw": "{\n\"nombre\": \"Zone Wars\",\n\"impacto\": \"Global\",\n\"años\": \"10\",\n\"telefono\": \"33445557\",\n\"categoria\": \"Gamer\",\n\"correo\": \"Zone@gmail.com\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "cd7ee55e-3aa7-4571-bda0-2e6d80ac9112",
-            "colId": "a0764fc9-727f-41e3-8c4c-e576882b4f4a",
+            "_id": "5475a743-ffb3-41a1-b85a-d314bf9c06f3",
+            "colId": "d4d3ca85-42ad-4b1d-ad8d-8f2f94255f09",
             "containerId": "",
-            "name": "empresasAZGet",
+            "name": "empresaGet",
             "url": "http://localhost:3000/coperex_Api/v1/empresas",
             "method": "GET",
-            "sortNum": 20000,
-            "created": "2024-02-24T04:20:25.024Z",
-            "modified": "2024-02-24T04:50:42.309Z",
+            "sortNum": 40000,
+            "created": "2024-02-25T05:15:53.789Z",
+            "modified": "2024-02-25T05:16:01.477Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "8736425f-616f-47e6-a5af-2a9b7f0a4ad2",
-            "colId": "a0764fc9-727f-41e3-8c4c-e576882b4f4a",
+            "_id": "515a1677-53f7-44ad-988d-56516b9765c0",
+            "colId": "d4d3ca85-42ad-4b1d-ad8d-8f2f94255f09",
             "containerId": "",
-            "name": "empresasZAGet",
-            "url": "http://localhost:3000/coperex_Api/v1/empresas/descendente",
+            "name": "empresasGetAZ",
+            "url": "http://localhost:3000/coperex_Api/v1/empresas/empresasAZ?filtro=A-Z",
             "method": "GET",
-            "sortNum": 30000,
-            "created": "2024-02-24T04:43:10.082Z",
-            "modified": "2024-02-24T04:45:52.187Z",
+            "sortNum": 50000,
+            "created": "2024-02-25T05:16:45.371Z",
+            "modified": "2024-02-25T05:29:48.327Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "filtro",
+                    "value": "A-Z",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "4c5b3e6c-a2e0-42b0-893c-51126d5f16d4",
+            "colId": "d4d3ca85-42ad-4b1d-ad8d-8f2f94255f09",
+            "containerId": "",
+            "name": "empresasGetZA",
+            "url": "http://localhost:3000/coperex_Api/v1/empresas/empresasZA?filtro=A-Z",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-02-25T05:36:06.381Z",
+            "modified": "2024-02-25T05:36:25.171Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "filtro",
+                    "value": "A-Z",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "fc520d69-7166-4512-9aef-5b1cea9c6aaa",
+            "colId": "d4d3ca85-42ad-4b1d-ad8d-8f2f94255f09",
+            "containerId": "",
+            "name": "empresasGetAñosMen",
+            "url": "http://localhost:3000/coperex_Api/v1/empresas/empresasMem",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-02-25T06:07:44.653Z",
+            "modified": "2024-02-25T06:13:15.969Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b6be29c9-7054-47e3-bae6-e8fe8651b5d7",
+            "colId": "d4d3ca85-42ad-4b1d-ad8d-8f2f94255f09",
+            "containerId": "",
+            "name": "empresasGetAñosMas",
+            "url": "http://localhost:3000/coperex_Api/v1/empresas/empresasMas",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-02-25T06:16:20.891Z",
+            "modified": "2024-02-25T06:18:31.075Z",
             "headers": [],
             "params": [],
             "tests": []
