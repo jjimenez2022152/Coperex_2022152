@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "empresaCollection",
-    "dateExported": "2024-02-27T03:41:55.143Z",
+    "dateExported": "2024-02-27T05:15:46.049Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -102,6 +102,20 @@
             "sortNum": 80000,
             "created": "2024-02-25T06:16:20.891Z",
             "modified": "2024-02-25T06:18:31.075Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "95e91566-b49b-4b95-885d-e76f688f4377",
+            "colId": "d4d3ca85-42ad-4b1d-ad8d-8f2f94255f09",
+            "containerId": "",
+            "name": "empresaReporteExcelGet",
+            "url": "http://localhost:3000/coperex_Api/v1/empresas/reportExcel",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-02-27T04:50:24.515Z",
+            "modified": "2024-02-27T04:51:10.830Z",
             "headers": [],
             "params": [],
             "tests": []
