@@ -6,7 +6,8 @@ import {
     empresaGetZA,
     empresasGetAZ,
     empresasGetAMen,
-    empresasGetAMas
+    empresasGetAMas,
+    generarExcelReporte
 } from "./empresa.controller.js";
 import {
     existenteEmail,
@@ -42,6 +43,6 @@ router.get("/empresasZA", empresasGetAZ);
 router.get("/empresasMem", empresasGetAMen);
 router.get("/empresasMas", empresasGetAMas);
 
-
+router.get("/reportExcel", generarExcelReporte);
 
 export default router;

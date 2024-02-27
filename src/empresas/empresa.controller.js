@@ -1,7 +1,7 @@
 import { response, request } from 'express'; 
 //import bcryptjs from 'bcryptjs';
 import Empresa from './empresa.model.js';
-
+import ExcelJS from 'exceljs';
 
 export const empresaPost = async (req = request, res = response) => {
     const {nombre, impacto, años, telefono, categoria, correo} = req.body;
@@ -152,6 +152,37 @@ export const empresasGetAMas = async (req, res) => {
         console.log(error);
         res.status(500).json({
             msg: 'Error al listar empresas'
+        });
+    }
+};
+
+export const generarExcelReporte = async (req, res) => {
+    try {
+        const empresas = await Empresa.find({}).exec();
+        const workbook = new ExcelJS.Workbook();
+
+        const worksheet = workbook.addWorksheet('Empresas');
+        worksheet.addRow(['nombre', 'impacto', 'años', 'telefono', 'categoria', 'correo']);
+
+        empresas.forEach(empresa => {
+            worksheet.addRow([
+                empresa.nombre,
+                empresa.impacto,
+                empresa.años,
+                empresa.telefono,
+                empresa.categoria,
+                empresa.correo
+            ]);
+        });
+
+        const buffer = await workbook.xlsx.writeBuffer();
+        res.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        res.set('Content-Disposition', 'attachment; filename="reporte_empresas.xlsx"');
+        res.send(buffer);
+    } catch (e) {
+        console.log(e);
+        res.status(500).json({
+            msg: "Report no generated",
         });
     }
 };
