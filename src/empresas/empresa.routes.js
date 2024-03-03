@@ -16,6 +16,7 @@ import {
     existeCorreoEmpresa
 } from "../helpers/db-validators.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
+import { validarJWT } from "../middlewares/validar-jwt.js";
 
 
 const router = Router();
@@ -23,6 +24,7 @@ const router = Router();
 router.post(
     "/",
     [
+        validarJWT,
         check("nombre", "El nombre es obligatorio").custom(existeNombreEmpresa).not().isEmpty(),
         check("impacto","El impacto de la empresa es obligatorio").not().isEmpty(),
         check("años", "Los años de trayectoria son obligatorios").not().isEmpty(),
@@ -36,14 +38,14 @@ router.post(
     empresaPost
 );
 
-router.get("/", companyGet);
+router.get("/",validarJWT, companyGet);
 
 
-router.get("/empresasAZ", empresaGetZA);
-router.get("/empresasZA", empresasGetAZ);
-router.get("/empresasMem", empresasGetAMen);
-router.get("/empresasMas", empresasGetAMas);
+router.get("/empresasAZ",validarJWT, empresaGetZA);
+router.get("/empresasZA",validarJWT, empresasGetAZ);
+router.get("/empresasMem",validarJWT, empresasGetAMen);
+router.get("/empresasMas",validarJWT, empresasGetAMas);
 
-router.get("/reportExcel", generarExcelReporte);
+router.get("/reportExcel",validarJWT, generarExcelReporte);
 
 export default router;

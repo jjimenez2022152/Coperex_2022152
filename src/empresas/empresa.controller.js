@@ -39,7 +39,7 @@ export const empresasGetAZ = async (req, res) => {
         const [total, empresas] = await Promise.all([
             Empresa.countDocuments(query),
             Empresa.find(query)
-                .sort({ nombre: -1 }) // Ordenar por nombre en orden ascendente (A-Z)
+                .sort({ nombre: -1 }) 
                 .skip(Number(desde))
                 .limit(Number(limite))
         ]);
@@ -114,7 +114,7 @@ export const empresasGetAMen = async (req, res) => {
         const [total, empresas] = await Promise.all([
             Empresa.countDocuments(query),
             Empresa.find(query)
-                .sort({ años: 1 }) // Ordenar por nombre en orden ascendente (A-Z)
+                .sort({ años: 1 }) 
                 .skip(Number(desde))
                 .limit(Number(limite))
         ]);
@@ -139,7 +139,7 @@ export const empresasGetAMas = async (req, res) => {
         const [total, empresas] = await Promise.all([
             Empresa.countDocuments(query),
             Empresa.find(query)
-                .sort({ años: -1 }) // Ordenar por nombre en orden ascendente (A-Z)
+                .sort({ años: -1 }) 
                 .skip(Number(desde))
                 .limit(Number(limite))
         ]);
