@@ -1,25 +1,25 @@
 {
     "client": "Thunder Client",
     "collectionName": "authLogin",
-    "dateExported": "2024-02-27T03:42:07.335Z",
+    "dateExported": "2024-03-03T03:57:12.816Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "36a4d963-1b89-484f-a821-5cbca8ce5c30",
-            "colId": "984cd5ec-102d-4d7a-9fec-d26112052073",
+            "_id": "b86b116d-b574-4765-9945-50e4cebbd2f8",
+            "colId": "53cf0ca7-1b3e-4240-8df7-1d4214f86fe3",
             "containerId": "",
             "name": "Login",
-            "url": "http://localhost:3000/coperex_Api/v1/auth/login",
+            "url": "http://localhost:8080/coperex_Api/v1/auth/login",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-27T03:23:27.488Z",
-            "modified": "2024-02-27T03:33:06.038Z",
+            "created": "2024-03-03T03:42:40.569Z",
+            "modified": "2024-03-03T03:47:41.423Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"correo\":\"Admin1@gmail.com\",\n  \"password\":\"123456\"\n}",
+                "raw": "{\n  \"correo\":\"Admin10@gmail.com\",\n  \"password\":\"123456\"\n}",
                 "form": []
             },
             "tests": []
